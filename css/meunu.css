@@ -7,6 +7,7 @@
     --font-cod-title: 'Orbitron', sans-serif;
     --font-cod-subtitle: 'Rajdhani', sans-serif;
     --font-cod-body: 'Rajdhani', sans-serif;
+    font-size: 62.5%;
 }
 
 body{
@@ -465,13 +466,16 @@ footer .container {
     color: var(--cod-secondary);
     z-index: 111;
 
-<<<<<<< HEAD:black_op6/black_op6/meunu.css
-=======
 }
 
 aside {
     display: flex;
     justify-content: center;
     align-items: center;
->>>>>>> 3591ee9 (actualizacion):css/meunu.css
+
+}
+
+.card-ward{
+    z-index: -2;
+    
 }
