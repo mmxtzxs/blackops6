@@ -476,6 +476,5 @@ aside {
 }
 
 .card-ward{
-    z-index: -2;
-    
+    opacity: .7;
 }
