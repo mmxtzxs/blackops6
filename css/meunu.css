@@ -478,3 +478,12 @@ aside {
 .card-ward{
     opacity: .7;
 }
+
+.header-car {
+    width: fit-content;
+    height: fit-content;
+}
+
+.header-car img {
+    width: max-content;
+}  
