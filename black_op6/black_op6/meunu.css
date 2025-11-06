@@ -8,6 +8,7 @@
     --font-cod-subtitle: 'Rajdhani', sans-serif;
     --font-cod-body: 'Rajdhani', sans-serif;
 }
+
 body{
     background-color: var(--cod-background);
 }
@@ -36,8 +37,7 @@ header{
 header .barraNavegacion .menuHamburguesa{
     position: relative;
     z-index: 2;
-
-    
+   
 }
 header .barraNavegacion .ul{
     display: flex;
@@ -97,29 +97,56 @@ img {
 
 }
 
-body{
+*, *::before, *::after {
+    box-sizing: border-box; /*el padding no sume al ancho total */
+}
+
+body {
+    background-color: var(--cod-background);
     font-family: "Bebas Neue", sans-serif;
+    color: var(--cod-text);
+    margin: 0;
+    padding: 0;
 }
 
-img{
-    max-width: 100%
+img {
+    width: 9rem;
+    max-width: 100%;
 }
 
-article.card{
+article.card {
     max-width: 350px;
-    color: #ffffff;
+    color: var(--cod-text);
     border-radius: 8px;
-    margin:  1rem;
-    box-shadow:0 0 12px; 
-    
+    margin: 1rem;
+    box-shadow: 0 0 12px var(--cod-secondary);
+    background-color: var(--cod-primary);
+    transition: transform .3s ease; /* hace que no se vaya de golpe*/
 }
-.card footer{
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--cod-accent);
+}
+
+.card:focus {
+    outline: 2px solid var(--cod-secondary);
+    outline-offset: 4px;
+    transform: scale(1.03);
+}
+
+article:target {
+    border: 2px solid var(--cod-accent);
+    box-shadow: 0 0 20px var(--cod-accent);
+}
+
+.card footer {
     padding: 0 1rem;
 }
 
-.copy{
+.copy {
     text-align: center;
-    color: #ffffff;
+    color: var(--cod-text);
 }
 
 .video-bg {
@@ -128,10 +155,26 @@ article.card{
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    z-index: 0; 
+    object-fit: cover;
+    z-index: 0;
     opacity: 0.3;
     filter: brightness(0.5);
+}
+
+@media (max-width: 800px) {
+    .ul {
+        display: none;
+        flex-direction: row;
+    }
+    aside {
+        justify-content: center;
+    }
+    .card {
+        width: 45%;
+    }
+    .link {
+        font-size: 1.3rem;
+    } 
 }
 
 @media (max-width: 600px) {
@@ -139,26 +182,20 @@ article.card{
         flex-direction: row;
         justify-content: space-between;
     }
-
     .ul {
         flex-direction: column;
-        
     }
-
     .link {
         font-size: 1.5rem;
     }
-
     aside {
         flex-direction: column;
         align-items: center;
         padding: 1rem;
     }
-
     .card {
         width: 90%;
     }
-
     .video-bg {
         opacity: 0.2;
     }
@@ -191,31 +228,10 @@ article.card{
     .texto-card h3 {
         font-size: 1.2rem;
     }
-
     .video-bg {
         opacity: 0.2;
     }
-
     .copy p {
         font-size: 0.8rem;
     }
-}
-
-@media (max-width: 800px) {
-    .ul {
-        display: none;
-        flex-direction: row;
-    }
-
-    aside {
-        justify-content: center;
-    }
-
-    .card {
-        width: 45%;
-    }
-
-    .link {
-        font-size: 1.3rem;
-    } 
 }
